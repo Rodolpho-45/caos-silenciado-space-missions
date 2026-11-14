@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#060716">
+  <meta name="description" content="Uma jornada 3D pelas máquinas da NASA que chegaram à Lua e a Marte — e pelo que deixaram para trás.">
+  <title>CAOS silenciado — rastros em outros mundos</title>
+  <link rel="stylesheet" href="scrollcraft.css">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <a class="skip-link" href="#main"><span data-pt="Pular para o conteúdo" data-en="Skip to content">Pular para o conteúdo</span></a>
+  <header class="topbar">
+    <a class="team-brand" href="#top" aria-label="CAOS silenciado, início"><img src="assets/brand/caos-silenciado.jpg" alt="Emblema da equipe CAOS silenciado"><span>CAOS <b>silenciado</b><small>SPACE APPS · 2026</small></span></a>
+    <nav class="site-nav" aria-label="Navegação principal">
+      <a href="#survey" data-pt="Surveyor 3" data-en="Surveyor 3">Surveyor 3</a>
+      <a href="#ingenuity" data-pt="Ingenuity" data-en="Ingenuity">Ingenuity</a>
+      <a href="#arquivo" data-pt="Registros" data-en="Archive">Registros</a>
+    </nav>
+    <div class="language" role="group" aria-label="Idioma / Language"><span class="language-label">IDIOMA / LANG</span><button type="button" data-lang="pt" aria-pressed="true" aria-label="Português">PT</button><button type="button" data-lang="en" aria-pressed="false" aria-label="English">EN</button></div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <canvas class="hero-canvas" id="orbit-canvas" aria-hidden="true"></canvas>
+      <div class="hero-shade" aria-hidden="true"></div>
+      <div class="hero-copy">
+        <p class="kicker"><span class="signal"></span><span data-pt="ARQUIVO DE MISSÃO · TERRA → OUTROS MUNDOS" data-en="MISSION ARCHIVE · EARTH → OTHER WORLDS">ARQUIVO DE MISSÃO · TERRA → OUTROS MUNDOS</span></p>
+        <h1 id="hero-title"><span data-pt="Elas chegaram.<br>O que deixaram <i>continua.</i>" data-en="They made it.<br>What they left <i>remains.</i>">Elas chegaram.<br>O que deixaram <i>continua.</i></span></h1>
+        <p class="hero-lede" data-pt="Do lançamento ao último sinal: explore duas máquinas da NASA através de modelos 3D, datas e registros reais." data-en="From launch to last signal: explore two NASA machines through 3D models, dates, and real records.">Do lançamento ao último sinal: explore duas máquinas da NASA através de modelos 3D, datas e registros reais.</p>
+        <a class="hero-link" href="#survey"><span data-pt="Começar a jornada" data-en="Begin the journey">Começar a jornada</span><span aria-hidden="true">↓</span></a>
+      </div>
+      <div class="hero-coordinates" aria-hidden="true"><span>MOON · 03°00′S 336°36′E</span><span>MARS · JEZERO CRATER</span><span>▰ LIVE MODEL · 3D</span></div>
+      <span class="hero-orbit-label orbit-earth">TERRA</span><span class="hero-orbit-label orbit-moon">LUA</span><span class="hero-orbit-label orbit-mars">MARTE</span>
+    </section>
+
+    <section class="intro-band">
+      <p class="eyebrow" data-pt="A pergunta que guia esta jornada" data-en="The question guiding this journey">A pergunta que guia esta jornada</p>
+      <p class="intro-question" data-pt="Quando uma máquina para de responder, o que ainda podemos aprender com ela?" data-en="When a machine stops responding, what can we still learn from it?">Quando uma máquina para de responder, o que ainda podemos aprender com ela?</p>
+      <p class="intro-small" data-pt="Role para avançar. As peças se afastam enquanto a história se aproxima." data-en="Scroll to move forward. The pieces pull apart as the story comes into focus.">Role para avançar. As peças se afastam enquanto a história se aproxima.</p>
+    </section>
+
+    <section class="mission-experience" aria-label="Modelos tridimensionais e histórias das missões">
+      <aside class="scene-column" aria-label="Modelo tridimensional da missão selecionada">
+        <div class="scene-shell">
+          <canvas id="mission-canvas" aria-hidden="true"></canvas>
+          <div class="scene-vignette" aria-hidden="true"></div>
+          <div class="scene-header"><span class="scene-live"><i></i><span data-pt="MODELO 3D INTERATIVO" data-en="INTERACTIVE 3D MODEL">MODELO 3D INTERATIVO</span></span><span id="scene-counter">01 / 04</span></div>
+          <div class="scene-caption"><span id="scene-kicker">SURVEYOR 3 · LUA</span><strong id="scene-title" data-pt="A sonda em repouso" data-en="The lander at rest">A sonda em repouso</strong><span id="scene-hint" data-pt="Role para separar as peças" data-en="Scroll to separate the parts">Role para separar as peças</span></div>
+          <div class="scene-tags" id="scene-tags" aria-live="polite"><span data-pt="CÂMERA TV" data-en="TV CAMERA">CÂMERA TV</span><span data-pt="COLETOR DE SOLO" data-en="SOIL SAMPLER">COLETOR DE SOLO</span><span data-pt="PAINEL SOLAR" data-en="SOLAR ARRAY">PAINEL SOLAR</span></div>
+          <button class="rotate-help" type="button" id="rotate-toggle" aria-pressed="false"><span aria-hidden="true">⟳</span><span data-pt="Pausar rotação" data-en="Pause rotation">Pausar rotação</span></button>
+          <span class="scale-note" data-pt="RECONSTITUIÇÃO VISUAL · NÃO EM ESCALA" data-en="VISUAL RECONSTRUCTION · NOT TO SCALE">RECONSTITUIÇÃO VISUAL · NÃO EM ESCALA</span>
+        </div>
+      </aside>
+
+      <div class="story-column">
+        <section class="mission-story" id="survey" data-mission-story="surveyor">
+          <header class="chapter-intro" data-mission="surveyor" data-step="0"><p class="eyebrow"><span class="chapter-index">01</span><span data-pt="LUA · OCEANUS PROCELLARUM" data-en="MOON · OCEANUS PROCELLARUM">LUA · OCEANUS PROCELLARUM</span></p><h2 data-pt="Surveyor <em>3</em>" data-en="Surveyor <em>3</em>">Surveyor <em>3</em></h2><p data-pt="Uma exploradora robótica foi enviada para responder a uma pergunta essencial: o solo lunar suportaria um pouso humano?" data-en="A robotic explorer was sent to answer a crucial question: could the lunar ground support a human landing?">Uma exploradora robótica foi enviada para responder a uma pergunta essencial: o solo lunar suportaria um pouso humano?</p></header>
+          <article class="story-step" data-mission="surveyor" data-step="0">
+            <div class="step-top"><span>01 / 04</span><span class="step-line"></span><span data-pt="PROJETO" data-en="DESIGN">PROJETO</span></div>
+            <h3 data-pt="Feita para tocar o solo — sem astronautas." data-en="Built to touch down — without astronauts.">Feita para tocar o solo — sem astronautas.</h3>
+            <p data-pt="Selecionada pela NASA em 1961, a Hughes Aircraft desenvolveu a família Surveyor sob gestão do JPL. A Surveyor 3 tinha uma estrutura triangular de alumínio, três pernas de pouso, câmera de TV e um braço coletor de amostras. O conjunto pesava quase uma tonelada." data-en="Selected by NASA in 1961, Hughes Aircraft developed the Surveyor series under JPL management. Surveyor 3 had a triangular aluminum frame, three landing legs, a TV camera, and a surface sampler. The spacecraft weighed nearly one ton.">Selecionada pela NASA em 1961, a Hughes Aircraft desenvolveu a família Surveyor sob gestão do JPL. A Surveyor 3 tinha uma estrutura triangular de alumínio, três pernas de pouso, câmera de TV e um braço coletor de amostras. O conjunto pesava quase uma tonelada.</p>
+            <div class="fact-row"><div><strong>3 m</strong><span data-pt="de altura" data-en="tall">de altura</span></div><div><strong>4,2 m</strong><span data-pt="com as pernas abertas" data-en="leg span">com as pernas abertas</span></div><div><strong>998 kg</strong><span data-pt="na Terra" data-en="on Earth">na Terra</span></div></div>
+            <a class="source-inline" href="https://science.nasa.gov/mission/surveyor-3/" target="_blank" rel="noreferrer"><span data-pt="Dados de projeto · NASA Science" data-en="Design facts · NASA Science">Dados de projeto · NASA Science</span> ↗</a>
+          </article>
+          <article class="story-step" data-mission="surveyor" data-step="1">
+            <div class="step-top"><span>02 / 04</span><span class="step-line"></span><span data-pt="LANÇAMENTO" data-en="LAUNCH">LANÇAMENTO</span></div>
+            <h3 data-pt="Da Flórida à órbita de transferência." data-en="From Florida to a transfer orbit.">Da Flórida à órbita de transferência.</h3>
+            <p data-pt="Em 17 de abril de 1967, às 07:05 UTC, um Atlas-Centaur AC-12 decolou do Complexo 36B, em Cabo Canaveral. Primeiro, a sonda entrou em órbita de estacionamento ao redor da Terra. Depois, o estágio Centaur reacendeu e a colocou no caminho da Lua." data-en="On April 17, 1967, at 07:05 UTC, an Atlas-Centaur AC-12 lifted off from Launch Complex 36B at Cape Canaveral. The probe first entered Earth parking orbit. Then the Centaur stage reignited and sent it on course for the Moon.">Em 17 de abril de 1967, às 07:05 UTC, um Atlas-Centaur AC-12 decolou do Complexo 36B, em Cabo Canaveral. Primeiro, a sonda entrou em órbita de estacionamento ao redor da Terra. Depois, o estágio Centaur reacendeu e a colocou no caminho da Lua.</p>
+            <div class="route-strip"><span>17 ABR 1967</span><i></i><span data-pt="CABO CANAVERAL" data-en="CAPE CANAVERAL">CABO CANAVERAL</span><i></i><span>ATLAS–CENTAUR</span></div>
+            <a class="source-inline" href="https://nssdc.gsfc.nasa.gov/planetary/lunar/surveyor.html" target="_blank" rel="noreferrer">NASA NSSDCA ↗</a>
+          </article>
+          <article class="story-step" data-mission="surveyor" data-step="2">
+            <div class="step-top"><span>03 / 04</span><span class="step-line"></span><span data-pt="POUSO E DESCOBERTA" data-en="LANDING & DISCOVERY">POUSO E DESCOBERTA</span></div>
+            <h3 data-pt="A Lua: dois saltos, um pouso histórico." data-en="The Moon: two bounces, one historic landing.">A Lua: dois saltos, um pouso histórico.</h3>
+            <p data-pt="Depois de entrar em órbita lunar, a Surveyor 3 pousou em 20 de abril na região de Oceanus Procellarum. Uma falha no corte do motor fez a sonda quicar duas vezes antes de parar. A câmera enviou mais de 6.300 imagens; a pá cavou valas e testou a resistência do solo." data-en="After entering lunar orbit, Surveyor 3 landed on April 20 in Oceanus Procellarum. An engine cutoff problem made the probe bounce twice before settling. Its camera sent over 6,300 images; the scoop dug trenches and tested the soil’s strength.">Depois de entrar em órbita lunar, a Surveyor 3 pousou em 20 de abril na região de Oceanus Procellarum. Uma falha no corte do motor fez a sonda quicar duas vezes antes de parar. A câmera enviou mais de 6.300 imagens; a pá cavou valas e testou a resistência do solo.</p>
+            <div class="coordinate-box"><span class="coord-icon">⌖</span><span><b>3° S · 23,41° O</b><small>OCEANUS PROCELLARUM · LUA</small></span><span class="coord-target" data-pt="DESTINO" data-en="TARGET">DESTINO</span></div>
+            <a class="source-inline" href="https://science.nasa.gov/mission/surveyor-3/" target="_blank" rel="noreferrer"><span data-pt="Trajetória e pouso · NASA Science" data-en="Trajectory & landing · NASA Science">Trajetória e pouso · NASA Science</span> ↗</a>
+          </article>
+          <article class="story-step" data-mission="surveyor" data-step="3">
+            <div class="step-top"><span>04 / 04</span><span class="step-line"></span><span data-pt="O ECO" data-en="THE ECHO">O ECO</span></div>
+            <h3 data-pt="Dois anos depois, a Apollo 12 voltou." data-en="Two years later, Apollo 12 returned.">Dois anos depois, a Apollo 12 voltou.</h3>
+            <p data-pt="A Surveyor 3 parou de transmitir em 4 de maio de 1967. Em novembro de 1969, os astronautas Pete Conrad e Alan Bean pousaram a cerca de 180 metros dela. Eles trouxeram a câmera e a pá coletora de volta à Terra: peças que passaram dois anos e meio expostas à Lua viraram material de estudo." data-en="Surveyor 3 stopped transmitting on May 4, 1967. In November 1969, astronauts Pete Conrad and Alan Bean landed about 180 meters away. They returned the camera and soil scoop to Earth: parts exposed to the Moon for two and a half years became objects of scientific study.">A Surveyor 3 parou de transmitir em 4 de maio de 1967. Em novembro de 1969, os astronautas Pete Conrad e Alan Bean pousaram a cerca de 180 metros dela. Eles trouxeram a câmera e a pá coletora de volta à Terra: peças que passaram dois anos e meio expostas à Lua viraram material de estudo.</p>
+            <div class="mission-outcome"><span class="outcome-mark">↗</span><span><b data-pt="O destino não foi o fim da história." data-en="Reaching the Moon was not the end of the story.">O destino não foi o fim da história.</b><small data-pt="A cápsula de TV e a pá voltaram para análise em laboratórios na Terra." data-en="The TV camera and scoop returned for analysis in Earth laboratories.">A cápsula de TV e a pá voltaram para análise em laboratórios na Terra.</small></span></div>
+            <a class="source-inline" href="https://science.nasa.gov/mission/surveyor-3/" target="_blank" rel="noreferrer"><span data-pt="A visita da Apollo 12 · NASA Science" data-en="The Apollo 12 visit · NASA Science">A visita da Apollo 12 · NASA Science</span> ↗</a>
+          </article>
+        </section>
+
+        <figure class="archive-image">
+          <img src="assets/images/surveyor3-apollo12.webp" alt="Fotografia da Apollo 12: astronauta ao lado da Surveyor 3 na superfície da Lua." loading="lazy">
+          <figcaption><span data-pt="REGISTRO REAL · ALAN BEAN INSPECIONA A SURVEYOR 3 · 1969" data-en="REAL RECORD · ALAN BEAN INSPECTS SURVEYOR 3 · 1969">REGISTRO REAL · ALAN BEAN INSPECIONA A SURVEYOR 3 · 1969</span><span>NASA / JSC · AS12-48-7134</span></figcaption>
+        </figure>
+
+        <section class="mission-story ingenuity-story" id="ingenuity" data-mission-story="ingenuity">
+          <header class="chapter-intro" data-mission="ingenuity" data-step="0"><p class="eyebrow"><span class="chapter-index">02</span><span data-pt="MARTE · CRATERA JEZERO" data-en="MARS · JEZERO CRATER">MARTE · CRATERA JEZERO</span></p><h2>Ingenuity</h2><p data-pt="O primeiro helicóptero a voar em outro planeta. Pequeno, autônomo e preso sob um rover até chegar a Marte." data-en="The first helicopter to fly on another planet. Small, autonomous, and tucked beneath a rover until it reached Mars.">O primeiro helicóptero a voar em outro planeta. Pequeno, autônomo e preso sob um rover até chegar a Marte.</p></header>
+          <article class="story-step" data-mission="ingenuity" data-step="0">
+            <div class="step-top"><span>01 / 04</span><span class="step-line"></span><span data-pt="ENGENHARIA" data-en="ENGINEERING">ENGENHARIA</span></div>
+            <h3 data-pt="Uma caixa pequena. Uma ideia enorme." data-en="A small box. A huge idea.">Uma caixa pequena. Uma ideia enorme.</h3>
+            <p data-pt="O JPL liderou o projeto e integrou o veículo. A AeroVironment construiu as pás, o trem de pouso e a estrutura do painel solar. Para cortar a atmosfera fina de Marte, quatro pás de fibra de carbono giram em dois rotores contrarrotativos — muito mais rápido que os de um helicóptero terrestre." data-en="JPL led the design and integrated the aircraft. AeroVironment built its blades, landing gear, and solar-panel substrate. To cut through Mars’ thin air, four carbon-fiber blades spin in two counter-rotating rotors — much faster than a helicopter on Earth.">O JPL liderou o projeto e integrou o veículo. A AeroVironment construiu as pás, o trem de pouso e a estrutura do painel solar. Para cortar a atmosfera fina de Marte, quatro pás de fibra de carbono giram em dois rotores contrarrotativos — muito mais rápido que os de um helicóptero terrestre.</p>
+            <div class="fact-row"><div><strong>1,8 kg</strong><span data-pt="na Terra" data-en="on Earth">na Terra</span></div><div><strong>1,2 m</strong><span data-pt="cada rotor" data-en="each rotor">cada rotor</span></div><div><strong>2.400</strong><span data-pt="rpm aprox." data-en="rpm approx.">rpm aprox.</span></div></div>
+            <a class="source-inline" href="https://www.jpl.nasa.gov/news/press_kits/ingenuity/landing/mission/spacecraft/" target="_blank" rel="noreferrer"><span data-pt="Como foi construído · NASA JPL" data-en="How it was built · NASA JPL">Como foi construído · NASA JPL</span> ↗</a>
+          </article>
+          <article class="story-step" data-mission="ingenuity" data-step="1">
+            <div class="step-top"><span>02 / 04</span><span class="step-line"></span><span data-pt="LANÇAMENTO" data-en="LAUNCH">LANÇAMENTO</span></div>
+            <h3 data-pt="Pegou carona até o planeta vermelho." data-en="It hitched a ride to the Red Planet.">Pegou carona até o planeta vermelho.</h3>
+            <p data-pt="Em 30 de julho de 2020, Ingenuity partiu de Cabo Canaveral sob a barriga do rover Perseverance, num foguete Atlas V. A viagem até Marte percorreu cerca de 471 milhões de quilômetros. O pouso no Crater Jezero ocorreu em 18 de fevereiro de 2021." data-en="On July 30, 2020, Ingenuity left Cape Canaveral tucked beneath the Perseverance rover aboard an Atlas V rocket. The journey to Mars covered about 471 million kilometers. It landed in Jezero Crater on February 18, 2021.">Em 30 de julho de 2020, Ingenuity partiu de Cabo Canaveral sob a barriga do rover Perseverance, num foguete Atlas V. A viagem até Marte percorreu cerca de 471 milhões de quilômetros. O pouso no Crater Jezero ocorreu em 18 de fevereiro de 2021.</p>
+            <div class="route-strip"><span>30 JUL 2020</span><i></i><span>ATLAS V 541</span><i></i><span data-pt="471 MILHÕES KM" data-en="471 MILLION KM">471 MILHÕES KM</span></div>
+            <a class="source-inline" href="https://www.jpl.nasa.gov/news/press_kits/ingenuity/landing/quick_facts/" target="_blank" rel="noreferrer"><span data-pt="Lançamento e chegada · NASA JPL" data-en="Launch and arrival · NASA JPL">Lançamento e chegada · NASA JPL</span> ↗</a>
+          </article>
+          <article class="story-step" data-mission="ingenuity" data-step="2">
+            <div class="step-top"><span>03 / 04</span><span class="step-line"></span><span data-pt="PRIMEIRO VOO" data-en="FIRST FLIGHT">PRIMEIRO VOO</span></div>
+            <h3 data-pt="30 dias planejados. Quase três anos de voo." data-en="30 days planned. Nearly three years of flight.">30 dias planejados. Quase três anos de voo.</h3>
+            <p data-pt="Depois de ser baixado até o solo em 4 de abril, o helicóptero voou pela primeira vez em 19 de abril de 2021. A demonstração foi planejada para até cinco voos. Ingenuity fez 72, percorreu 17 quilômetros e registrou dados para futuras aeronaves. Ele não levava instrumentos científicos: a descoberta foi provar que o voo motorizado era possível em Marte." data-en="After being lowered to the surface on April 4, the helicopter flew for the first time on April 19, 2021. The demonstration was planned for up to five flights. Ingenuity made 72, traveled 17 kilometers, and recorded data for future aircraft. It carried no science instruments: its discovery was proving powered flight possible on Mars.">Depois de ser baixado até o solo em 4 de abril, o helicóptero voou pela primeira vez em 19 de abril de 2021. A demonstração foi planejada para até cinco voos. Ingenuity fez 72, percorreu 17 quilômetros e registrou dados para futuras aeronaves. Ele não levava instrumentos científicos: a descoberta foi provar que o voo motorizado era possível em Marte.</p>
+            <div class="flight-tally"><strong>72</strong><span data-pt="voos em Marte" data-en="flights on Mars">voos em Marte</span><i></i><strong>17 km</strong><span data-pt="percorridos" data-en="traveled">percorridos</span></div>
+            <a class="source-inline" href="https://science.nasa.gov/mission/mars-2020-perseverance/ingenuity-mars-helicopter/" target="_blank" rel="noreferrer"><span data-pt="Resultados da missão · NASA Science" data-en="Mission results · NASA Science">Resultados da missão · NASA Science</span> ↗</a>
+          </article>
+          <article class="story-step" data-mission="ingenuity" data-step="3">
+            <div class="step-top"><span>04 / 04</span><span class="step-line"></span><span data-pt="ÚLTIMO SINAL" data-en="LAST SIGNAL">ÚLTIMO SINAL</span></div>
+            <h3 data-pt="Onde a missão terminou — e ficou registrada." data-en="Where the mission ended — and was recorded.">Onde a missão terminou — e ficou registrada.</h3>
+            <p data-pt="No voo 72, em 18 de janeiro de 2024, as pás do rotor foram danificadas durante o pouso. A equipe chamou a região final de Valinor Hills. Em 4 de fevereiro, o rover Perseverance fotografou o helicóptero parado, a cerca de 450 metros. A imagem funciona como uma última entrada visual no arquivo da missão." data-en="On flight 72, on January 18, 2024, rotor blades were damaged during landing. The team named the final region Valinor Hills. On February 4, the Perseverance rover photographed the stationary helicopter from about 450 meters away — a final visual entry in the mission archive.">No voo 72, em 18 de janeiro de 2024, as pás do rotor foram danificadas durante o pouso. A equipe chamou a região final de Valinor Hills. Em 4 de fevereiro, o rover Perseverance fotografou o helicóptero parado, a cerca de 450 metros. A imagem funciona como uma última entrada visual no arquivo da missão.</p>
+            <div class="coordinate-box"><span class="coord-icon">⌖</span><span><b>VALINOR HILLS</b><small>JEZERO CRATER · MARTE</small></span><span class="coord-target" data-pt="ÚLTIMO LOCAL" data-en="FINAL LOCATION">ÚLTIMO LOCAL</span></div>
+            <a class="source-inline" href="https://science.nasa.gov/blog/farewell-to-our-flying-friend-and-closing-in-on-the-crater-rim/" target="_blank" rel="noreferrer"><span data-pt="Fim da missão · NASA JPL / NASA Science" data-en="Mission end · NASA JPL / NASA Science">Fim da missão · NASA JPL / NASA Science</span> ↗</a>
+          </article>
+        </section>
+
+        <figure class="archive-image mars-record">
+          <img src="assets/images/ingenuity-final-airfield.webp" alt="Panorama da cratera Jezero; Ingenuity aparece como um pequeno ponto na paisagem marciana." loading="lazy">
+          <figcaption><span data-pt="REGISTRO REAL · O CAMPO FINAL DE INGENUITY · 4 FEV 2024" data-en="REAL RECORD · INGENUITY’S FINAL AIRFIELD · FEB 4, 2024">REGISTRO REAL · O CAMPO FINAL DE INGENUITY · 4 FEV 2024</span><span>NASA / JPL-CALTECH / ASU / MSSS · PIA26236</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="archive" id="arquivo">
+      <div class="archive-title"><p class="eyebrow" data-pt="Não é render. É o registro." data-en="Not a render. The record.">Não é render. É o registro.</p><h2 data-pt="A imagem real.<br>Depois da reconstrução." data-en="The real image.<br>After the reconstruction.">A imagem real.<br>Depois da reconstrução.</h2><p data-pt="Os modelos 3D desta página são reconstituições ilustrativas, feitas a partir de descrições e medidas publicadas. Compare-os com as fotografias reais abaixo." data-en="The 3D models on this page are illustrative reconstructions, based on published descriptions and dimensions. Compare them with the real photographs below.">Os modelos 3D desta página são reconstituições ilustrativas, feitas a partir de descrições e medidas publicadas. Compare-os com as fotografias reais abaixo.</p></div>
+      <div class="archive-grid">
+        <figure class="archive-card"><img src="assets/images/surveyor3-apollo12.webp" alt="O astronauta Alan Bean inspeciona a Surveyor 3 na Lua durante a Apollo 12." loading="lazy"><figcaption><strong data-pt="Uma visita improvável" data-en="An unlikely visit">Uma visita improvável</strong><span data-pt="Apollo 12 · 19 nov 1969 · NASA/JSC" data-en="Apollo 12 · Nov 19, 1969 · NASA/JSC">Apollo 12 · 19 nov 1969 · NASA/JSC</span><a href="https://science.nasa.gov/resource/apollo-12-and-surveyor-3/" target="_blank" rel="noreferrer" data-pt="Ver fonte original ↗" data-en="Open original source ↗">Ver fonte original ↗</a></figcaption></figure>
+        <figure class="archive-card"><img src="assets/images/ingenuity-final-airfield.webp" alt="Ingenuity fotografado pelo rover Perseverance no seu último campo de voo em Marte." loading="lazy"><figcaption><strong data-pt="Pequeno ponto. Grande distância." data-en="Small dot. Long distance.">Pequeno ponto. Grande distância.</strong><span>PIA26236 · NASA/JPL-Caltech/ASU/MSSS</span><a href="https://science.nasa.gov/photojournal/perseverance-spots-ingenuity-at-its-final-airfield/" target="_blank" rel="noreferrer" data-pt="Ver fonte original ↗" data-en="Open original source ↗">Ver fonte original ↗</a></figcaption></figure>
+      </div>
+      <div class="source-library"><span class="eyebrow" data-pt="Fontes primárias" data-en="Primary sources">Fontes primárias</span><a href="https://science.nasa.gov/mission/surveyor-3/" target="_blank" rel="noreferrer">NASA Science · Surveyor 3 ↗</a><a href="https://nssdc.gsfc.nasa.gov/planetary/lunar/surveyor3data.html" target="_blank" rel="noreferrer">NASA NSSDCA · Surveyor 3 data ↗</a><a href="https://www.jpl.nasa.gov/missions/ingenuity/" target="_blank" rel="noreferrer">NASA JPL · Ingenuity ↗</a><a href="https://www.jpl.nasa.gov/news/press_kits/ingenuity/landing/mission/spacecraft/" target="_blank" rel="noreferrer">NASA JPL · spacecraft design ↗</a></div>
+    </section>
+
+    <footer class="footer">
+      <img class="footer-logo" src="assets/brand/caos-silenciado.jpg" alt="">
+      <div><p class="footer-title">CAOS silenciado</p><p class="footer-note" data-pt="Projeto independente para o NASA Space Apps Challenge 2026. O conteúdo factual está vinculado a fontes oficiais da NASA. Modelos 3D criados como reconstruções ilustrativas, não em escala. IA auxiliou na implementação e no rascunho/tradução dos textos; a equipe revisará os fatos antes da submissão. Não afiliado nem endossado pela NASA." data-en="Independent project for the NASA Space Apps Challenge 2026. Factual content links to official NASA sources. 3D models are illustrative reconstructions, not to scale. AI assisted implementation and draft/translation of copy; the team will review facts before submission. Not affiliated with or endorsed by NASA.">Projeto independente para o NASA Space Apps Challenge 2026. O conteúdo factual está vinculado a fontes oficiais da NASA. Modelos 3D criados como reconstruções ilustrativas, não em escala. IA auxiliou na implementação e no rascunho/tradução dos textos; a equipe revisará os fatos antes da submissão. Não afiliado nem endossado pela NASA.</p></div>
+      <a href="#top" class="back-top"><span data-pt="Subir ao início" data-en="Back to top">Subir ao início</span> ↑</a>
+    </footer>
+  </main>
+
+  <script src="scrollcraft.js"></script>
+  <script>ScrollCraft.mount(document.body);</script>
+  <script src="site.js"></script>
+  <script src="assets/js/three.global.min.js"></script>
+  <script src="scene.js"></script>
+</body>
+</html>
